@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger-line {
+  @apply bg-white block w-[30px] h-[2px] my-2 rounded-sm;
+}
+
+span.active:nth-child(1) {
+  @apply rotate-45;
+}
+
+span.active:nth-child(2) {
+  @apply scale-0;
+}
+
+span.active:nth-child(3) {
+  @apply -rotate-45;
+}
+
+nav.active {
+  @apply block my-2;
+}
+
+.navbar-links {
+  @apply px-4 py-2 mx-2 rounded-md hover:shadow font-regular;
+}
