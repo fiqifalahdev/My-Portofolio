@@ -1,5 +1,5 @@
 <template>
-  <Content class="bg-indigo-100 p-5">
+  <Content class="bg-indigo-100 p-5" id="about" data-aos="fade-left" data-aos-duration="1500">
     <div class="w-full sm:w-1/2">
       <img src="../assets/developer.png" alt="" class="mx-auto" />
     </div>

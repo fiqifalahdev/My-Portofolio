@@ -1,5 +1,5 @@
 <template>
-  <Content id="skills">
+  <Content id="skills" data-aos="fade-right" data-aos-duration="1500">
     <div class="w-full mt-2 sm:p-5">
       <h1 class="mb-5 text-xl sm:text-2xl font-bold md:text-center">Skills</h1>
       <div class="flex flex-wrap">

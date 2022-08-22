@@ -3,6 +3,7 @@
   <Hero />
   <About />
   <Skills />
+  <Experience />
   <Project />
   <Footer />
 </template>
@@ -12,6 +13,7 @@ import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
+import Experience from "./components/Experience.vue";
 import Project from "./components/Project.vue";
 import Footer from "./components/Footer.vue";
 
@@ -22,6 +24,7 @@ export default {
     Hero,
     About,
     Skills,
+    Experience,
     Project,
     Footer,
   },
