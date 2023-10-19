@@ -31,6 +31,13 @@ jobs:
           username: fiqifalah17@gmail.com
           password: fiqifalah17
 
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.1
+
       - name: Build and Deploy to Docker Hub
         id: docker_build
         uses: docker/build-push-action@v2
