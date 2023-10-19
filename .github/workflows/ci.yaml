@@ -1,16 +1,15 @@
 name: CI Portofolio Fiqi
-
 on: 
   push:
     branches: [ master ]
 jobs:
-    build: 
-      runs-on: ubuntu-latest
-      steps:
-        name: Checkout
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
         uses: actions/checkout@v2
-
-        name: Prepare
+      
+      - name: Prepare
         id: prep
         run: |
           BRANCH=${GITHUB_REF##*/}
@@ -26,25 +25,23 @@ jobs:
           echo ::set-output name=BUILD_ID::${BUILD_ID}
           echo ::set-output name=LATEST_ID::${LATEST_ID}
 
-        name: Login to Docker Hub
+      - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           username: fiqifalah17@gmail.com
           password: fiqifalah17
 
-        name: Build and Deploy to Docker Hub
+      - name: Build and Deploy to Docker Hub
         id: docker_build
         uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: 
+          with:
+            push: true
+            tags: 
             - fiqi-vue/portofolio:${{ steps.prep.outputs.BUILD_ID }}
             - fiqi-vue/portofolio:${{ steps.prep.outputs.LATEST_ID }}
             - fiqi-vue/portofolio:latest
-          build-args: |
-            BUILD_DATE=${{ steps.prep.outputs.BUILD_DATE }}
-            BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
-            LATEST_ID=${{ steps.prep.outputs.LATEST_ID }}
-          file: ./Dockerfile
-         
-      
+            build-args: |
+              BUILD_DATE=${{ steps.prep.outputs.BUILD_DATE }}
+              BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
+              LATEST_ID=${{ steps.prep.outputs.LATEST_ID }}
+            file: ./Dockerfile
