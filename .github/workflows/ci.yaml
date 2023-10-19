@@ -38,8 +38,6 @@ jobs:
           push: true
           tags:
             - fiqi-vue/portofolio:${{ steps.prep.outputs.BUILD_ID }}
-            - fiqi-vue/portofolio:${{ steps.prep.outputs.LATEST_ID }}
-            - fiqi-vue/portofolio:latest
           build-args: |
             BUILD_DATE=${{ steps.prep.outputs.BUILD_DATE }}
             BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
