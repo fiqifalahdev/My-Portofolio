@@ -1,4 +1,4 @@
-name: "CI Portofolio Fiqi - With Vue JS"
+name: CI Portofolio Fiqi - With Vue JS
 
   on: 
     push:
