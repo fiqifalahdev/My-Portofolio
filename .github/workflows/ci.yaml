@@ -1,10 +1,9 @@
-name: CI Portofolio Fiqi - With Vue JS
+name: CI Portofolio Fiqi
 
-  on: 
-    push:
-      branches: [ master ]
-
-  jobs:
+on: 
+  push:
+    branches: [ master ]
+jobs:
     build: 
       runs-on: ubuntu-latest
       steps:
