@@ -65,7 +65,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PASSWORD }}
           script: |
-            ./setup.sh ${{ steps.prep.outputs.BUILD_ID }}
+            /root/docker/setup.sh ${{ steps.prep.outputs.BUILD_ID }}
         # Set up script setup.sh here
         # cd /var/docker/${{ env.branch }}
         # docker pull geniwhitelabel/backend-service:${{ env.branch }}
