@@ -38,23 +38,34 @@ jobs:
         id: branch-name
         uses: tj-actions/branch-names@v5.1
 
-      # - name: Change tag imagename
-      #   id: change-tag
-      #   run: |
-      #     chmod +x ./setup.sh
-      #     echo ::set-output name=new_image::$(./setup.sh fiqifalah17/portofolio:${{ steps.prep.outputs.BUILD_ID }})
-
       - name: Build and Deploy to Docker Hub
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: |
-            fiqifalah17/portofolio:${{ steps.prep.outputs.LATEST_ID }}
+            fiqifalah17/portofolio:${{ steps.prep.outputs.BUILD_ID }}
           build-args: |
             BUILD_DATE=${{ steps.prep.outputs.BUILD_DATE }}
             BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
             LATEST_ID=${{ steps.prep.outputs.LATEST_ID }}
           file: ./Dockerfile
 
-    
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to ssh server
+        uses: appleboy/ssh-action@master
+        with:
+          host: 128.199.71.15
+          username: root
+          key: ${{ secrets.SSH_PASSWORD }}
+        # Set up script setup.sh here
+          script: |
+            ./setup.sh ${{ steps.prep.outputs.BUILD_ID }}
+
+        # cd /var/docker/${{ env.branch }}
+        # docker pull geniwhitelabel/backend-service:${{ env.branch }}
+        # docker compose down
+        # docker compose up -d
