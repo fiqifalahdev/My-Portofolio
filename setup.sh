@@ -5,6 +5,7 @@ if [ $# -ne 1 ]; then
     echo "Usage: $0 <repository/image:old_tag>"
     exit 1
 fi
+# OK
 
 # Get the provided image reference
 old_image="$1"
