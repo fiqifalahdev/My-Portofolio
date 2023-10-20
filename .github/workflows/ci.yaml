@@ -56,6 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to ssh server
+        id: auth
         run: |
           ssh root@128.199.71.15
         # uses: appleboy/ssh-action@master
