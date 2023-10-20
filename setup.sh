@@ -13,7 +13,7 @@ incremented_tag=$(echo "$new_tag", | awk -F. '{print $NF+1}')
 new_tag="1.0.$incremented_tag"
 
 # Create the new image reference with the incremented tag
-new_image="fiqifalah/portofolio:$new_tag"
+new_image="fiqifalah17/portofolio:$new_tag"
 
 # echo "Pushing $new_image"
 echo "$new_image"
