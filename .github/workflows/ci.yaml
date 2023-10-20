@@ -41,7 +41,7 @@ jobs:
       - name: Change tag imagename
         id: change-tag
         run: |
-          chmod -x ./setup.sh
+          chmod +x ./setup.sh
           ./setup.sh
 
       - name: Build and Deploy to Docker Hub
