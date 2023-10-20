@@ -42,7 +42,7 @@ jobs:
         id: change-tag
         run: |
           chmod +x ./setup.sh
-          ./setup.sh
+          echo ::set-output name=new_image::$(./setup.sh)
 
       - name: Build and Deploy to Docker Hub
         id: docker_build
