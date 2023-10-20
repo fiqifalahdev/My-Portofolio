@@ -1,0 +1,25 @@
+#!bin/sh
+
+# Check if a single argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <new_tag>"
+    exit 1
+fi
+
+# Get the provided image tag
+new_tag="$1"
+
+# Existing Docker image reference
+image="fiqifalah17/portofolio:master-2d61a172-1697705150"
+
+# Split the image reference into repository and tag parts
+repository=$(echo "$image" | cut -d: -f1)
+old_tag=$(echo "$image" | cut -d: -f2)
+
+# Create the new image reference with the provided tag
+new_image='$repository:$new_tag`
+
+echo "Original image reference: $image"
+echo "New image reference: $new_image"
+
+

@@ -1,2 +1,4 @@
 node_modules
 *.logs
+docker-compose.yml
+*.sh
