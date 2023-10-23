@@ -55,6 +55,8 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: build
+    steps:
+
       - name: Deploy to ssh server
         id: auth
         uses: appleboy/ssh-action@master
