@@ -72,7 +72,7 @@ jobs:
           echo ::set-output name=BUILD_DATE::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           echo ::set-output name=BUILD_ID::${BUILD_ID} 
           echo ::set-output name=LATEST_ID::${LATEST_ID}
-          
+
       - name: Deploy to ssh server
         id: auth
         uses: appleboy/ssh-action@master
@@ -81,7 +81,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PASSWORD }}
           script: |
-            /root/docker/setup.sh ${{ steps.prep.outputs.BUILD_ID }}
+            /root/My-Portofolio/setup.sh ${{ steps.prep.outputs.BUILD_ID }}
         # Set up script setup.sh here
         # cd /var/docker/${{ env.branch }}
         # docker pull geniwhitelabel/backend-service:${{ env.branch }}
