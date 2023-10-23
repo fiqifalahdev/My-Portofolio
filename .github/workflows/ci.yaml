@@ -54,8 +54,8 @@ jobs:
             BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
             LATEST_ID=${{ steps.prep.outputs.LATEST_ID }}
           file: ./Dockerfile
-      outputs:
-        buildID: ${{ steps.prep.outputs.BUILD_ID }}
+    outputs:
+      buildID: ${{ steps.prep.outputs.BUILD_ID }}
 
   deploy:
     runs-on: ubuntu-latest
