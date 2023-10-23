@@ -54,6 +54,8 @@ jobs:
             BUILD_ID=${{ steps.prep.outputs.BUILD_ID }}
             LATEST_ID=${{ steps.prep.outputs.LATEST_ID }}
           file: ./Dockerfile
+      outputs:
+        buildID: ${{ steps.prep.outputs.BUILD_ID }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -68,7 +70,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PASSWORD }}
           script: |
-            /root/docker/setup.sh ${{ needs.build.prep.outputs.BUILD_ID }} # Pass the version as a parameter
+            /root/docker/setup.sh ${{ needs.build.outputs.buildID }} # Pass the version as a parameter
         # Set up script setup.sh here
         # cd /var/docker/${{ env.branch }}
         # docker pull geniwhitelabel/backend-service:${{ env.branch }}
