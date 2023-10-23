@@ -68,7 +68,8 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PASSWORD }}
           script: |
-            /root/docker/setup.sh ${{ env.BUILD_ID }}
+            version="${{ env.BUILD_ID }}" # Get the version from the environment variable
+            /root/docker/setup.sh "$version" # Pass the version as a parameter
         # Set up script setup.sh here
         # cd /var/docker/${{ env.branch }}
         # docker pull geniwhitelabel/backend-service:${{ env.branch }}

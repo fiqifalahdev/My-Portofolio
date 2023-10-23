@@ -12,8 +12,8 @@ search=$(cat /root/docker/docker-compose.yml | grep 'portofolio:' | sed 's/.*por
 
 sed -i "s/$search/$version/g" /root/docker/docker-compose.yml
 
-echo "Version updated to $version"
+# echo "Version updated to $version"
 
-# docker pull fiqifalah17/portofolio:$version
+docker pull fiqifalah17/portofolio:$version
 
-# docker-compose up -d
+docker-compose up -d
