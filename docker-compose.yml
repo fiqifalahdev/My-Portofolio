@@ -1,4 +1,4 @@
-version: "3"
+verion: '3.9'
 services:
   web:
     build: .
@@ -15,4 +15,5 @@ services:
 networks:
   app-net:
     external: true
+    name: uib-webbuilder-projects_app-net
 
