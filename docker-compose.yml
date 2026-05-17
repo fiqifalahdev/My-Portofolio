@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    image: fiqifalah17/portofolio:1.0.1
+    container_name: portofolio
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+
