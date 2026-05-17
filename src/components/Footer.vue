@@ -1,38 +1,63 @@
 <template>
-  <Content class="bg-indigo-500 text-white">
-    <div class="w-full md:max-w-lg lg:ml-10 py-5">
-      <h1 class="font-semibold text-2xl mb-3">Just say Hi!</h1>
-      <p class="text-base sm:text-lg">I'm always open to discuss your project and talk about new things</p>
-      <div class="flex flex-wrap">
-        <div class="w-full sm:w-1/2">
-          <p class="font-regular mt-6 text-sm">Mail me at :</p>
-          <p class="text-sm mt-2">fiqifalah17@gmail.com</p>
+  <footer class="bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white font-poppins">
+    <div class="container mx-auto px-6 py-16">
+      <div class="flex flex-wrap gap-10">
+        <!-- Left: CTA text -->
+        <div class="w-full md:flex-1" data-aos="fade-right" data-aos-duration="900">
+          <h2 class="font-bold text-2xl sm:text-3xl mb-3">Let's work together!</h2>
+          <p class="text-indigo-200 text-base sm:text-lg mb-6 max-w-sm">
+            I'm always open to discuss your project and bring new ideas to life.
+          </p>
+          <a href="mailto:fiqifalah17@gmail.com" class="btn-primary bg-white text-indigo-700 hover:bg-indigo-50 shadow-lg shadow-indigo-900/40">
+            <font-awesome-icon :icon="['fa-solid', 'fa-envelope']" />
+            Say Hello
+          </a>
         </div>
-        <div class="w-full sm:w-1/2">
-          <p class="font-regular mt-6 text-sm">Follow me :</p>
-          <span class="block">
-            <a href="https://wa.me/08815018220"><font-awesome-icon :icon="['fa-brands', 'fa-whatsapp']" class="mr-5 mt-2 text-xl" /></a>
-            <a href="https://instagram.com/fiqifalah">
-              <font-awesome-icon :icon="['fa-brands', 'fa-instagram']" class="mr-5 mt-2 text-xl" />
+
+        <!-- Right: Contact info -->
+        <div class="w-full md:w-auto" data-aos="fade-left" data-aos-duration="900">
+          <p class="text-indigo-300 text-sm font-semibold uppercase tracking-widest mb-4">Contact</p>
+          <p class="text-white text-sm mb-1 flex items-center gap-2">
+            <font-awesome-icon :icon="['fa-solid', 'fa-envelope']" class="text-indigo-300" />
+            fiqifalah17@gmail.com
+          </p>
+          <p class="text-indigo-300 text-sm font-semibold uppercase tracking-widest mt-6 mb-4">Follow Me</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/08815018220" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition text-lg">
+              <font-awesome-icon :icon="['fa-brands', 'fa-whatsapp']" />
             </a>
-            <a href="https://github.com/fiqifalahdev">
-              <font-awesome-icon :icon="['fa-brands', 'fa-github']" class="mr-5 mt-2 text-xl" />
+            <a href="https://instagram.com/fiqifalah" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition text-lg">
+              <font-awesome-icon :icon="['fa-brands', 'fa-instagram']" />
             </a>
-            <a href="https://twitter.com/fiqifalah17">
-              <font-awesome-icon :icon="['fa-brands', 'fa-twitter']" class="mr-5 mt-2 text-xl" />
+            <a href="https://github.com/fiqifalahdev" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition text-lg">
+              <font-awesome-icon :icon="['fa-brands', 'fa-github']" />
             </a>
-          </span>
+            <a href="https://www.linkedin.com/in/moh-fiqi-f-3aa13a11b/" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition text-lg">
+              <font-awesome-icon :icon="['fa-brands', 'fa-linkedin']" />
+            </a>
+            <a href="https://twitter.com/fiqifalah17" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition text-lg">
+              <font-awesome-icon :icon="['fa-brands', 'fa-twitter']" />
+            </a>
+          </div>
         </div>
       </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-indigo-700/50 mt-12 pt-6 flex flex-wrap items-center justify-between gap-4 text-sm text-indigo-300">
+        <p>&copy; {{ new Date().getFullYear() }} Fiqi Falah. All rights reserved.</p>
+        <p>Built with <span class="text-indigo-200 font-semibold">Vue.js</span> &amp; <span class="text-indigo-200 font-semibold">Tailwind CSS</span></p>
+      </div>
     </div>
-  </Content>
+  </footer>
 </template>
+
 <script>
-import Content from "./Pelengkap/Content.vue";
 export default {
   name: "Footer",
-  components: {
-    Content,
-  },
 };
 </script>

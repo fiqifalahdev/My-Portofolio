@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hamburger-line {
   @apply bg-indigo-700 block w-[30px] h-[2px] my-2 rounded-sm;
 }
@@ -23,9 +27,45 @@ nav.active {
 }
 
 .navbar-links {
-  @apply px-4 py-2 mx-2 rounded-md hover:shadow font-regular;
+  @apply px-4 py-2 mx-2 rounded-md hover:bg-indigo-50 hover:text-indigo-700 font-medium transition-colors duration-200;
+}
+
+.section-title {
+  @apply text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2;
+}
+
+.section-divider {
+  @apply w-12 h-1 bg-indigo-600 rounded-full mb-6;
 }
 
 .card {
   @apply px-4 mt-5 w-full md:w-1/2;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl;
+}
+
+.skill-badge {
+  @apply flex flex-col items-center p-3 bg-white rounded-xl shadow-sm border border-gray-100
+         hover:shadow-md hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 cursor-default;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white py-3 px-6 rounded-lg font-medium
+         hover:bg-indigo-500 active:bg-indigo-700 transition-colors duration-200 inline-flex items-center gap-2;
+}
+
+.btn-outline {
+  @apply border-2 border-indigo-600 text-indigo-600 py-3 px-6 rounded-lg font-medium
+         hover:bg-indigo-50 transition-colors duration-200 inline-flex items-center gap-2;
+}
+
+.timeline-item::before {
+  content: '';
+  @apply absolute left-4 top-0 bottom-0 w-0.5 bg-indigo-100;
+}
+
+.timeline-dot {
+  @apply w-4 h-4 rounded-full bg-indigo-600 border-2 border-white shadow-md flex-shrink-0 mt-1;
 }
